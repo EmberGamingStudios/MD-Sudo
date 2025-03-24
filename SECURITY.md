@@ -1,9 +1,8 @@
 # Security Policy
 
-## Supported Versions
+Security shouldn't be much of a problem since this is an offline singleplayer game. However if something is found, please report it.
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+## Supported Versions
 
 | Version | Supported          |
 | ------- | ------------------ |
