@@ -13,6 +13,6 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-Go to my Discord or the Issues tab to report vulnerabilities.
+Go to my Discord to report vulnerabilities. DO NOT DISCLOSE SECURITY-RELATED ISSUES PUBLICLY.
 
 If one is discovered, I should have an update out as soon as possible -I take security very seriously.
