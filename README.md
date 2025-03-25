@@ -14,6 +14,7 @@ All source code is AGPLv3 and all assets (unless otherwise stated) are CC BY-SA-
 | macOS     | :white_check_mark: | :x: |
 | Linux     | :white_check_mark: | :white_check_mark: |
 | Android     | :white_check_mark: | :white_check_mark: |
+| ChromeOS     | :white_check_mark: | :x: |
 | iOS     | :white_check_mark: | :x: |
 | Firefox    | :white_check_mark: | :white_check_mark: |
 | Chrome    | :white_check_mark: | :white_check_mark: |
