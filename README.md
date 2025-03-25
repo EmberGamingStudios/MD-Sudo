@@ -27,3 +27,5 @@ Windows, Linux, and Android are officially supported and tested.
 Official builds for iOS and macOS are available, but aren't officially supported and may be unstable.
  
 All HTML5 compatable browsers should be able to run Murder Drones Sudo but only Firefox, Chrome, and Edge are tested and officially supported.
+ 
+SteamOS: Download the Linux version, the controls SHOULD work without any configuation.
