@@ -813,9 +813,4 @@ label start:
 
     t "To be continued."
 
-    #scene grey
-    #show p test
-
-    #p "I thought what we were doing was right."
-
     return
