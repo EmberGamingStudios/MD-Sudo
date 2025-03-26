@@ -26,6 +26,8 @@ define one = Character("β", what_prefix="{cps=50}", what_suffix="{/cps}", color
 define two = Character("Δ", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00", window_background="gui/textbox1.png")
 define p1 = Character("P", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00", window_background="gui/textbox1.png")
 define k1 = Character("K", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00", window_background="gui/textbox1.png")
+define u = Character("System", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00")
+define c = Character("Capitan", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00")
 
 transform moveright:
   linear 0.5 xpos 1.0
@@ -132,7 +134,7 @@ label start:
     t "{i}It will be nice to have another face around here.{/i}"
     t "{i}It gets lonely around here sometimes.{/i}"
 
-    scene backgroundtest
+    scene backgroundtest with dissolve
     show sight zorder 2
 
     t "I walk to the door, thinking."
@@ -268,7 +270,7 @@ label start:
 
     t "D tilts his head."
 
-    d "\"I am a gen two, I should be an exellent replacement for her.\""
+    d "\"I am a gen two, I should be an excellent replacement for her.\""
 
     k "\"She was better than you'll ever be!\""
 
@@ -468,7 +470,7 @@ label start:
 
 
     t "{i}D is being quite successful.{/i}"
-    t "{i}At least the insurgents are being delt with.{/i}"
+    t "{i}At least the insurgents are being dealt with.{/i}"
     t "The time flies with very little other than the occasional kill report."
     t "Before you realize it, they return for the day."
 
@@ -487,7 +489,7 @@ label start:
 
     k "\"It's G: 2, D: 11.\""
 
-    t "G looks both surprised and a little dissapointed."
+    t "G looks both surprised and a little disappointed."
 
     g "\"Good job D! I'm very impressed.\""
 
@@ -539,10 +541,277 @@ label start:
     play audio "rifle.mp3"
     #play audio "p scream 1.mp3"
 
-    pause 1.0
+    pause 2.0
     stop music
-    #scene v
-    #play music "Worlds.mp3"
+    scene backgroundtest with dissolve
+    show sight zorder 2
+    play music "Worlds.mp3"
+
+    t "You wake up feeling peaceful."
+
+    g "\"K! D! {w}It's time to patrol.\""
+
+    t "{i}Time for work.{/i}"
+
+    show g test
+
+    t "You get up and open the door, seeing G outside."
+
+    k "\"Morning boss.\""
+
+    g "\"Good morning K.\""
+
+    t "You look over to see D approaching."
+
+    show g test:
+      xalign 0.25
+      yalign 0.0
+    show d test:
+      xalign 0.75
+      yalign 0.0
+
+
+    k "\"Good morning D.\""
+
+    t "D looks almost confused."
+
+    d "\"Good morning K.\""
+
+    t "For a moment you wonder if D's really soulless."
+
+    d "\"I noticed you didn't wake up screaming.\""
+
+    t "{i}And there goes that moment.{/i}"
+    t "{i}I wonder if he's a jackass on purpose or was just made that way.{/i}"
+
+    t "You watch as he walks away."
+    t "You already know the answer."
+
+    t "{i}He was.{/i}"
+    t "{i}He was never a worker like us.{/i}"
+
+    show g test at right with moveinright
+    hide g test
+
+    show d test at right with moveinright
+    hide d test
+
+    t "You watch as G and D fly off into the horizon before returning to the com room."
+
+    t "{i}A worker like us.{/i}"
+
+    t "You are interrupted by static from the radio."
+
+    t "{i}That was quick.{/i}"
+
+    t "You walk over to the radio, hearing a staticky, garbled voice."
+
+    k "\"G. What is it? Where are you?\""
+    k "\"I can't understand you.\""
+    k "\"Hang on a second, I'm trying to home in on your signal.\""
+
+    unknown "\"K.\""
+    unknown "\"Can you hear me?\""
+
+    k "\"Barely, your signal's faint.\""
+
+    unknown "\"Meet me at the old space port, dock 9. I need your help.\""
+
+    k "\"I'm on my way.\""
+
+    t "You run out the door, extend your wings, and fly."
+
+    t "{i}Why are you at the old space port?{/i}"
+
+    t "You look up, seeing storm clouds gathering."
+
+    t "{i}This doesn't make any sense.{/i}"
+    t "{i}The port is outside our patrol range.{/i}"
+    t "{i}G shouldn't even be there.{/i}"
+
+    t "You see the space port."
+
+    t "{i}I'm almost there G.{/i}"
+
+    scene light
+
+    t "And then all you see is a bright flash of light."
+
+    ##Insert death scene
+
+    scene unix 1
+
+    u "You are in safe mode."
+    u "System damage detected."
+    u "Starting HUD, please wait."
+
+    show sight zorder 2
+
+    unknown "\"K.\""
+    unknown "\"Wake up K.\""
+
+    k "\"G?\""
+
+    show p test
+
+    unknown "\"Not quite.\""
+
+    k "\"P.\""
+
+    p "\"Yes.\""
+
+    t "You jump up and embrace her."
+
+    k "\"You're alive.\""
+    k "\"I thought I lost you.\""
+
+    t "You step back."
+
+    k "\"How?\""
+    k "\"Command said you were killed by insurgents.\""
+
+    p "\"Command lied.\""
+    p "\"They've been lying about everything.\""
+    p "\"I found out their secret.\""
+    p "\"The true reason for the Mission.\""
+    p "\"And they shot me down.\""
+
+    t "Before you can ask, you hear several bangs."
+
+    p "\"They're here, I've got to go.\""
+
+    k "\"Come with me.\""
+
+    p "\"I can't, I'm a traitor and a deserter.\""
+    p "\"If command find's out I'm alive, they'll hunt me and kill me for good.\""
+
+    t "P quickly writes numbers on a piece of paper and hands it to you."
+
+    p "\"This has my coordinates, come find me as soon as you can.\""
+    p "\"I trust you K.\""
+
+    show p test at right with moveinright
+    hide p test
+
+    t "And with that P runs away."
+    t "You hear approaching drones."
+
+    unknown "\"Serial designation K-X01010000.\""
+
+    t "You turn around, stand tall, and give a salute."
+
+    k "\"Captain.\""
+
+    c "\"We detected your signal dropped here and you entered safe mode.\""
+
+    k "\"Just a lightning strike, sir.\""
+
+    c "\"What are you doing out here?\""
+
+    k "\"Just getting in some flying.\""
+    k "\"I rarely leave Facility 4, sir.\""
+
+    c "\"Come with us to be checked out.\""
+
+    k "\"With all due respect sir, I don't believe that is necessary.\""
+
+    c "\"It wasn't a request.\""
+
+    k "\"Yes sir.\""
+
+    t "You follow them back to Facility 1, the ground command center for Centauri."
+
+    t "You sit still while they run a hardware diagnostic."
+
+    t "A drone then barges into the room."
+
+    show g test
+
+    g "\"K!\""
+    g "\"There you are, I was worried.\""
+    g "\"They said you were stuck by lightning.\""
+
+    k "\"I was.\""
+    k "\"I'm alright though.\""
+    k "\"Takes more than a hit to bring us disassembly drones down.\""
+
+    g "\"I'm here to take you back home.\""
+
+    k "\"The captain should be back with the diagnostic report any second now.\""
+
+    t "The captain then enters the room."
+
+    k "\"Speak of the Cyn, here he is now.\""
+
+    c "\"Your system checks out, you are free to go.\""
+
+    k "\"Goodbye sir.\""
+
+    t "You and G leave the room and walk down the hall."
+    t "You look over at G, wondering about P."
+    t "The flight home is pretty quiet."
+
+    scene backgroundtest
+    show g test
+    show sight zorder 2
+
+    t "D greets you both with a nod."
+
+    k "\"Hey G, can I talk to you?\""
+    k "\"In private.\""
+
+    g "\"Sure.\""
+
+    t "You walk into your room and shut the door."
+
+    g "\"What is it?\""
+
+    k "\"It's about P.\""
+    k "\"What if command lied lied about her death?\""
+
+    g "\"What do you mean?\""
+
+    k "\"What if she was shot by command?\""
+
+    g "\"K, {w}why are you asking me this?\""
+
+    k "\"P's alive.\""
+
+    t "G looks at you surprised."
+
+    g "\"What?\""
+
+    k "\"She discovered the Mission wasn't what we thought it was.\""
+    k "\"And they shot her down to silence her.\""
+    k "\"Command's been lying to us.\""
+
+    g "\"How do you know this?\""
+
+    k "\"I talked to P.\""
+
+    g "\"That's why you were at the space port.\""
+
+    k "\"Yes, and she gave me her coordinates.\""
+    k "\"Don't tell anyone.\""
+
+    g "\"Not a word.\""
+
+    k "\"I'm going to find her tomorrow night.\""
+
+    g "\"I'm going with you.\""
+    g "\"We'll disable our locators and head off to her.\""
+    g "\"I'll send the other one off in the opposite direction.\""
+    g "\"Get anything you'll need ready for tomorrow, we won't be coming back.\""
+    g "\"See you tomorrow K.\""
+
+    k "\"See you.\""
+
+    show g test at right with moveinright
+    hide g test
+
+    scene unix 1
+
+    t "To be continued."
 
     #scene grey
     #show p test
