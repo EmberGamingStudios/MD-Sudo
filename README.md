@@ -6,6 +6,8 @@ THIS IS NOT AFFILIATED WITH Liam Vickers Animation or GLITCH Productions.
 
 All source code is AGPLv3 and all assets (unless otherwise stated) are CC BY-SA-NC (NC as required by Liam Vickers).
 
+NOTE: Some music is missing, check "audio/missing music.txt" and CREDITS for more information.
+
 ## Supported Platforms
 
 | Platform | Available | Supported | 
