@@ -590,11 +590,15 @@ label start:
     t "{i}He was.{/i}"
     t "{i}He was never a worker like us.{/i}"
 
+    stop music fadeout 3.0
+
     show g test at right with moveinright
     hide g test
 
     show d test at right with moveinright
     hide d test
+
+    play music "Neo Nebula.mp3"
 
     t "You watch as G and D fly off into the horizon before returning to the com room."
 
@@ -621,6 +625,9 @@ label start:
 
     t "You run out the door, extend your wings, and fly."
 
+    scene aurora with dissolve
+    show sight zorder 2
+
     t "{i}Why are you at the old space port?{/i}"
 
     t "You look up, seeing storm clouds gathering."
@@ -633,24 +640,40 @@ label start:
 
     t "{i}I'm almost there G.{/i}"
 
-    scene light
+    scene light with dissolve
 
     t "And then all you see is a bright flash of light."
 
-    ##Insert death scene
+    stop music
+    play audio "hit.mp3"
 
     scene unix 1
+    window hide
+    play music "disconnect.mp3"
+    show youre dead
+    pause 3
+    hide youre dead
+    show reboot
+    pause 3
+    hide reboot
+    window show
 
     u "You are in safe mode."
     u "System damage detected."
     u "Starting HUD, please wait."
 
+    stop music
     show sight zorder 2
+
+    play music "Frozen Worlds.mp3"
 
     unknown "\"K.\""
     unknown "\"Wake up K.\""
 
     k "\"G?\""
+
+    scene dock with dissolve
+    show sight zorder 2
 
     show p test
 
@@ -700,6 +723,8 @@ label start:
 
     t "You turn around, stand tall, and give a salute."
 
+    show captain
+
     k "\"Captain.\""
 
     c "\"We detected your signal dropped here and you entered safe mode.\""
@@ -721,6 +746,10 @@ label start:
 
     t "You follow them back to Facility 1, the ground command center for Centauri."
 
+    hide captain
+    scene room test with dissolve
+    show sight zorder 2
+
     t "You sit still while they run a hardware diagnostic."
 
     t "A drone then barges into the room."
@@ -739,6 +768,13 @@ label start:
 
     k "\"The captain should be back with the diagnostic report any second now.\""
 
+    show g test:
+      xalign 0.25
+      yalign 0.0
+    show captain:
+      xalign 0.75
+      yalign 0.0
+
     t "The captain then enters the room."
 
     k "\"Speak of the Cyn, here he is now.\""
@@ -747,11 +783,16 @@ label start:
 
     k "\"Goodbye sir.\""
 
+    hide captain
+    show g test:
+      xalign 0.50
+      yalign 0.0
+
     t "You and G leave the room and walk down the hall."
     t "You look over at G, wondering about P."
     t "The flight home is pretty quiet."
 
-    scene backgroundtest
+    scene backgroundtest with dissolve
     show g test
     show sight zorder 2
 
@@ -767,7 +808,7 @@ label start:
     g "\"What is it?\""
 
     k "\"It's about P.\""
-    k "\"What if command lied lied about her death?\""
+    k "\"What if command lied about her death?\""
 
     g "\"What do you mean?\""
 
@@ -812,5 +853,10 @@ label start:
     scene unix 1
 
     t "To be continued."
+
+    #scene grey
+    #show p test
+
+    #p "I thought what we were doing was right."
 
     return
