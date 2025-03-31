@@ -3,5 +3,5 @@ This music isn't included in the game source due to copyright restrictions, you 
     Eternal Destroyer.mp3
     Worlds.mp3
     Frozen Worlds.mp3
-    Noe Nebula.mp3
+    Neo Nebula.mp3
 
