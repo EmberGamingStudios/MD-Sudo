@@ -17,7 +17,7 @@ NOTE: Some music is missing, check "audio/missing music.txt" and CREDITS for mor
 | Linux     | :white_check_mark: | :white_check_mark: |
 | Android     | :white_check_mark: | :white_check_mark: |
 | ChromeOS     | :white_check_mark: | :x: |
-| iOS     | :white_check_mark: | :x: |
+| iOS     | partial | :x: |
 | Firefox    | :white_check_mark: | :white_check_mark: |
 | Chrome    | :white_check_mark: | :white_check_mark: |
 | Edge    | :white_check_mark: | :white_check_mark: |
@@ -26,6 +26,8 @@ NOTE: Some music is missing, check "audio/missing music.txt" and CREDITS for mor
 
 Windows, Linux, and Android are officially supported and tested.
  
-Official builds for iOS and macOS are available, but aren't officially supported and may be unstable.
+Official builds for macOS are available, but aren't officially supported and may be unstable.
  
 All HTML5 compatable browsers should be able to run Murder Drones Sudo but only Firefox, Chrome, and Edge are tested and officially supported.
+
+Complete builds for iOS aren't currently available or supported, but there is a partial build you can compile in XCode.
