@@ -28,6 +28,7 @@ define p1 = Character("P", what_prefix="{cps=50}", what_suffix="{/cps}", color="
 define k1 = Character("K", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00", window_background="gui/textbox1.png")
 define u = Character("System", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00")
 define c = Character("Capitan", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00")
+define one1 = Character("β", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00")
 
 transform moveright:
   linear 0.5 xpos 1.0
@@ -112,7 +113,9 @@ label start:
     scene 2 years with dissolve
     pause 3.0
     scene unix 1 with dissolve
-    pause 1.0
+    pause 2.0
+    scene k scene with dissolve
+    pause 2.0
 
     scene radar
     play music "Worlds.mp3"
@@ -851,8 +854,102 @@ label start:
     hide g test
 
     scene unix 1
+    show sight zorder 2
+
+    t "You try to sleep, but can't."
+    t "Can't stop thinking about everything that just happened."
+    t "Can't believe she's alive."
+    t "Can't stop hating command."
+    t "Just can't."
+
+    scene backgroundtest with dissolve
+    show sight zorder 2
+    play music "Worlds.mp3"
+
+    g "\"K! D! {w}It's time to patrol.\""
+
+    t "{i}Time to desert.{/i}"
+
+    show g test
+
+    t "You get up and open the door, seeing G outside."
+
+    k "\"Morning boss.\""
+
+    g "\"Good morning K.\""
+
+    t "You look over to see D approaching."
+
+    show g test:
+      xalign 0.25
+      yalign 0.0
+    show d test:
+      xalign 0.75
+      yalign 0.0
+
+    k "\"Good morning D.\""
+
+    t "D nods to you."
+
+    d "\"Morning K.\""
+
+    g "\"Let's get to work.\""
+
+    t "And with that, G takes off followed by D."
+
+    show g test at right with moveinright
+    hide g test
+
+    show d test at right with moveinright
+    hide d test
+
+    t "You watch as they fly off into the distance."
+
+    t "G returns a few minutes later."
+
+    show g test:
+      xalign 0.50
+      yalign 0.0
+
+    g "\"And back.\""
+
+    g "\"Alright, let's get heading out before anyone notices.\""
+
+    t "You nod to G, before taking off."
+
+    scene aurora with dissolve
+    show sight zorder 2
+
+    k "\"This way.\""
+
+    window hide
+    scene unix 1 with dissolve
+    pause 2.0
+    scene d scene with dissolve
+    pause 2.0
+    scene aurora with dissolve
+    show sight zorder 2
+    window show
+
+    one1 "\"Serial Designation D-10X001001, do you copy?\""
+
+    d "\"This is D, over.\""
+
+    one1 "\"Your squad mates have disabled their trackers and appear to be heading off out of their zone.\""
+    one1 "\"We are currently tracking them on radar, but they are heading out of range.\""
+    one1 "\"I need you to follow them to wherever they are heading.\""
+
+    d "\"Understood, sir.\""
+
+    one1 "\"Sending their location now.\""
+
+    scene unix 1 with dissolve
 
     t "To be continued."
+
+    scene note
+    window hide
+    pause
 
     #scene grey
     #show p test

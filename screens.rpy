@@ -226,7 +226,7 @@ style choice_vbox:
 
 style choice_button is default:
     properties gui.button_properties("choice_button")
-    activate_sound "ding.wav"
+    activate_sound "ding.mp3"
 
 style choice_button_text is default:
     properties gui.text_properties("choice_button")
@@ -558,7 +558,7 @@ screen about():
         vbox:
 
             label "[config.name!t]"
-            text _("Version [config.version!t]\n\nCreated by {a=https://duckduckgo.com}EmberGamingStudios\n")
+            text _("Version [config.version!t]\n\nCreated by {a=https://github.com/EmberGamingStudios}EmberGamingStudios\n")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
