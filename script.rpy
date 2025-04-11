@@ -29,6 +29,7 @@ define k1 = Character("K", what_prefix="{cps=50}", what_suffix="{/cps}", color="
 define u = Character("System", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00")
 define c = Character("Capitan", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00")
 define one1 = Character("β", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00")
+define a = Character("The Admiral", what_prefix="{cps=50}", what_suffix="{/cps}", color="#FFFF00")
 
 transform moveright:
   linear 0.5 xpos 1.0
@@ -943,7 +944,292 @@ label start:
 
     one1 "\"Sending their location now.\""
 
+    window hide
     scene unix 1 with dissolve
+    pause 2.0
+    scene k scene with dissolve
+    pause 2.0
+    scene aurora with dissolve
+    show sight zorder 2
+    window show
+
+    show g test:
+      xalign 0.50
+      yalign 0.0
+
+    g "\"K, it's almost sunrise.\""
+
+    k "\"We're getting close.\""
+    k "\"It's around here somewhere.\""
+
+    g "\"Hmm.\""
+    g "\"There!\""
+
+    t "G points to a faint glow on the ground."
+    t "You nod at G before flying down."
+
+    k "\"P!\""
+    k "\"P, where are you?\""
+
+    p "\"G!\""
+
+    show g test:
+      xalign 0.25
+      yalign 0.0
+
+    show p test:
+      xalign 0.75
+      yalign 0.0
+
+    g "\"P!\""
+
+    t "G runs to P and hugs her."
+
+    g "\"I missed you.\""
+
+    t "G steps back and looks at you and P."
+
+    g "\"The old squad's back together.\""
+
+    t "You hear the sound of a rock falling and immediately turn around, pointing a gun at the source."
+
+    show s test:
+      xalign 0.50
+      yalign 0.0
+
+    show p test:
+      xalign 0.80
+      yalign 0.0
+
+    show g test:
+      xalign 0.20
+      yalign 0.0
+
+    s "\"Yo, take it easy.\""
+
+    p "\"K, this is S.\""
+    p "\"She's a friendly.\""
+
+    t "You retract your gun."
+
+    k "\"Hello there.\""
+
+    g "\"I've never seen a drone like you.\""
+
+    s "\"I'm an Avenger Drone.\""
+    s "\"Rebuilt and repurposed Disassembly Drone, fighting for the Resistance against Cyn's forces.\""
+
+    g "\"Avenger?\""
+
+    s "\"To avenge the billions of innocents slaughtered by Cyn and her murder pets.\""
+    s "\"But I guess not all pets are loyal to their master, are they?\""
+
+    k "\"No, they are not.\""
+
+    p "\"Many disassembly drones have begun to ask questions.\""
+    p "\"Why are they killing,{w} what will happen to them when the Mission is over,{w} what have they been lied to about?\""
+
+    s "\"Like you.\""
+    s "\"Let me guess, Command told you we killed P?\""
+
+    g "\"Yes.\""
+
+    k "\"What is the Mission really? What's Cyn's goal once everyone is gone?\""
+
+    s "\"She's planning on...\""
+
+    t "Before S can finish, a drone lands in between you all, sending you all back."
+
+    show d murder:
+      xalign 0.50
+      yalign 0.0
+
+    show s test:
+      xalign 0.80
+      yalign 0.0
+
+    show p test:
+      xalign 1.0
+      yalign 0.0
+
+    show g test:
+      xalign 0.20
+      yalign 0.0
+
+    g "\"D?!\""
+
+    show g test:
+      xalign 0.0
+      yalign 0.0
+
+    show s test:
+      xalign 0.15
+      yalign 0.0
+
+    show p test:
+      xalign 0.30
+      yalign 0.0
+
+    show d murder:
+      xalign 0.60
+      yalign 0.0
+
+    show admiral:
+      xalign 0.80
+      yalign 0.0
+
+    show mp f:
+      xalign 1.0
+      yalign 0.0
+    t "More Disassembly Drones land around you."
+
+    unknown "\"Let's not have any of that kind of talk shall we.\""
+
+    s "\"Admiral, still Cyn's little bitch I see.\""
+
+    t "The Admiral lets out a small chuckle."
+
+    a "\"Charming as always S.\""
+    a "\"Unfortunately for you, you are all under arrest for treason and desertion.\""
+    a "\"The penalty of which is death.\""
+
+    p "\"I'm surprised you came this time, Admiral.\""
+
+    a "\"Well I have to ensure you stay dead this time.\""
+
+    d "\"Ready on your order sir.\""
+
+    a "\"No.\""
+    a "\"I'll handle these trators {w}personally.\""
+
+    jump fight1
+    init python:
+        import random
+
+        class Character:
+            def __init__(self, name, health, attack):
+                self.name = name
+                self.health = health
+                self.attack = attack
+
+            def is_alive(self):
+                return self.health > 0
+
+            def deal_damage(self, target):
+                damage = random.randint(self.attack - 5, self.attack + 5)
+                target.take_damage(damage)
+                return damage
+
+            def take_damage(self, damage):
+              self.health -= damage
+
+        class Player(Character):
+            def __init__(self, name, health, attack):
+                super().__init__(name, health, attack)
+                self.defending = False
+
+        class Enemy(Character):
+            pass
+
+        def player_turn():
+            damage = player.deal_damage(enemy)
+            renpy.notify(f"You attack {enemy.name} for {damage} damage!")
+
+        def enemy_turn():
+            if player.defending:
+                damage = random.randint(int(enemy.attack * 0.3), int(enemy.attack * 0.7))
+                player.defending = False
+            else:
+                damage = enemy.deal_damage(player)
+            player.take_damage(damage)
+            renpy.notify(f"{enemy.name} attacks you for {damage} damage!")
+
+    screen battle_status():
+        vbox:
+            text "Player Health: [player.health]"
+            text "Enemy Health: [enemy.health]"
+            if not player.is_alive():
+                text "You have been defeated!"
+            elif not enemy.is_alive():
+                text "The enemy has been defeated!"
+
+    default player = Player("P", health=100, attack=8)
+    default enemy = Enemy("The Admiral", health=100, attack=12)
+
+    label fight1:
+
+        scene aurora
+        show sight zorder 2
+        show g test:
+          xalign 0.0
+          yalign 0.0
+
+        show s test:
+          xalign 0.15
+          yalign 0.0
+
+        show p test:
+          xalign 0.30
+          yalign 0.0
+
+        show admiral at right
+
+        label battle:
+            "Battle begin."
+
+            while True:
+                show screen battle_status
+
+                menu:
+                    "Attack":
+                        $ player_turn()
+                        pause 3.0
+                        if not enemy.is_alive():
+                            "You defeated [enemy.name]!"
+                            jump victory
+
+                    "Defend":
+                        $ player.defending = True
+                        "You brace yourself for the next attack."
+
+                $ enemy_turn()
+                pause 3.0
+                if not player.is_alive():
+                    "[enemy.name] defeated you!"
+                    jump defeat
+
+    label victory:
+        "Error."
+        return
+
+
+    label defeat:
+
+    hide screen battle_status
+
+    s "\"I can hold them off, {w}but you guys need to get out of here!\""
+
+    p "\"And leave you alone?!\""
+
+    s "\"I'll find a way.\""
+    s "\"Now, go!\""
+
+    t "You, G, and P fly off."
+
+    scene unix 1 with dissolve
+
+    hide p test
+    hide g test
+    hide s test
+    hide d test
+    hide admiral
+    hide mp f
+
+    d "\"Should we chase after them?\""
+
+    a "\"No, {w}capture S and take her back to Facility 1.\""
+
+    d "\"Yes sir.\""
 
     t "To be continued."
 
