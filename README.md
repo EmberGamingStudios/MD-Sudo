@@ -32,4 +32,4 @@ ChromeOS is available via the Linux and Android versions.
  
 All HTML5 compatable browsers should be able to run Murder Drones Sudo but only Firefox, Chrome, and Edge are tested and officially supported.
 
-Complete (untested) Kcode builds for iOS are now available through AltStore, and there is a partial build you can compile in XCode.
+Complete (untested) Kcode builds for iOS are now available through AltStore, and there is a partial build you can compile in Xcode.
