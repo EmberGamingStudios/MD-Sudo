@@ -4,7 +4,7 @@ To be released.
 
 THIS IS NOT AFFILIATED WITH Liam Vickers Animation or GLITCH Productions.
 
-All source code is AGPLv3 and all assets (unless otherwise stated) are CC BY-SA-NC (NC as required by Liam Vickers).
+All source code is AGPLv3 and all assets (unless otherwise stated) are CC BY-SA.
 
 NOTE: Some music is missing, check "audio/missing music.txt" and CREDITS for more information.
 
@@ -17,7 +17,7 @@ NOTE: Some music is missing, check "audio/missing music.txt" and CREDITS for mor
 | Linux     | :white_check_mark: | :white_check_mark: |
 | Android     | :white_check_mark: | :white_check_mark: |
 | ChromeOS     | :white_check_mark: | :x: |
-| iOS     | partial | :x: |
+| iOS     | :white_check_mark: | :x: |
 | Firefox    | :white_check_mark: | :white_check_mark: |
 | Chrome    | :white_check_mark: | :white_check_mark: |
 | Edge    | :white_check_mark: | :white_check_mark: |
@@ -32,4 +32,4 @@ ChromeOS is available via the Linux and Android versions.
  
 All HTML5 compatable browsers should be able to run Murder Drones Sudo but only Firefox, Chrome, and Edge are tested and officially supported.
 
-Complete builds for iOS aren't currently available or supported, but there is a partial build you can compile in XCode.
+Complete (untested) Kcode builds for iOS are now available through AltStore, and there is a partial build you can compile in XCode.
